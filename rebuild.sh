@@ -11,14 +11,10 @@
 #  the same compiler being used here and is loaded in the run-time
 #  environment (e.g. LD_LIBRARY_PATH).
 #################################################################
-MPI=intelmpi/2021.7.0
-if [[ "$MPI" =~ ^intel ]]; then
-        module load hdf5/1.12.2-intel2021.7.0-impi
-        export I_MPI_F90=ifort
-else
-        module load  hdf5/1.12.2-intel2021.7.0-ompi
-        export OMPI_MPIF90=ifort
-fi
+MPI=intelmpi/2021.7.1
+module load hdf5/1.12.2-intel2021.7.0-impi
+export I_MPI_F90=ifort
+
 # Location of local hdf5 installed with same compiler being used for POT3D:
 HDF5_INCLUDE_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/include"
 HDF5_LIB_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib"
