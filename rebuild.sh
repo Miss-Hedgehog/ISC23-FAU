@@ -19,7 +19,7 @@ export I_MPI_F90=ifort
 HDF5_INCLUDE_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/include"
 HDF5_LIB_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib"
 # Fortran HDF5 library flags (these can be version dependent):
-HDF5_LIB_FLAGS="-lhdf5_fortran -lhdf5hl_fortran -lhdf5 -lhdf5_hl"
+HDF5_LIB_FLAGS="-lhdf5_fortran -lhdf5 -lhdf5_hl"
 
 ###########################################################################
 # Please set the compile flags based on your compiler and hardware setup.
