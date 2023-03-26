@@ -13,7 +13,7 @@
 #################################################################
 MPI=intelmpi/2021.7.1
 module load  hdf5/1.12.2-intel2021.7.0-impi
-export IMPI_MPIF90=ifort
+export I_MPI_MPIF90=ifort
 export LD_LIBRARY_PATH=/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib:$LD_LIBRARY_PATH
 
 # Location of local hdf5 installed with same compiler being used for POT3D:
