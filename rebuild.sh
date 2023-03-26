@@ -11,13 +11,13 @@
 #  the same compiler being used here and is loaded in the run-time
 #  environment (e.g. LD_LIBRARY_PATH).
 #################################################################
-MPI=openmpi/4.1.4-intel2021.7.0
-module load  hdf5/1.12.2-intel2021.7.0-ompi
-export OMPI_MPIF90=ifort
+MPI=intelmpi/2021.7.1
+module load  hdf5/1.12.2-gcc12.2.0-impi
+export I_MPI_F90=ifort
 
 # Location of local hdf5 installed with same compiler being used for POT3D:
-HDF5_INCLUDE_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-buvnk5ss2wv2trdxjgchjvazkceljoez/include"
-HDF5_LIB_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-buvnk5ss2wv2trdxjgchjvazkceljoez/lib"
+HDF5_INCLUDE_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-12.2.0/hdf5-1.12.2-p6dx7tzt5zwo6s55vepjv6k36ylyukef/include"
+HDF5_LIB_DIR="/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-12.2.0/hdf5-1.12.2-p6dx7tzt5zwo6s55vepjv6k36ylyukef/lib"
 # Fortran HDF5 library flags (these can be version dependent):
 
 HDF5_LIB_FLAGS="-lhdf5_fortran -lhdf5_hl_fortran -lhdf5 -lhdf5_hl"
@@ -26,7 +26,7 @@ HDF5_LIB_FLAGS="-lhdf5_fortran -lhdf5_hl_fortran -lhdf5 -lhdf5_hl"
 # Please set the compile flags based on your compiler and hardware setup.
 ###########################################################################
 
-FFLAGS="-O3 "
+FFLAGS="-O3 -xHost -assume byterecl -heap-arrays"
 
 ###########################################################################
 # If using NV HPC SDK for GPUs, with CUDA version >= 11.3, you can set 
