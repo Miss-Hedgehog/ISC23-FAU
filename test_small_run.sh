@@ -1,4 +1,4 @@
-NP=16
+NP=4
 
 cd testsuite
 
