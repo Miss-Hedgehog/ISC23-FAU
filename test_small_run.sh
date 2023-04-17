@@ -1,7 +1,7 @@
 #!/bin/bash   
 #SBATCH --job-name=pot3d           
 #SBATCH --nodes=4           
-#SBATCH --partition=work* 
+#SBATCH --partition=work
 #SBATCH --time=01:00:00
 #SBATCH --output=%j.out              
 #SBATCH --error=%j.err   
