@@ -6,6 +6,8 @@
 #SBATCH --output=%j.out              
 #SBATCH --error=%j.err   
 
+module load intelmpi-2021.7.0
+module load hdf5/1.10.7-impi-intel
 cd testsuite
 
 POT3D_HOME=$PWD/..
