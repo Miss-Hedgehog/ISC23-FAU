@@ -8,8 +8,8 @@
 
 source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/vtune-vars.sh
 #module load intel/2021.7.0
-module load intelmpi-2021.7.0
-module load hdf5/1.10.7-impi-intel
+#module load intelmpi-2021.7.0
+#module load hdf5/1.10.7-impi-intel
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib
 
@@ -23,7 +23,7 @@ cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
-mpirun -np 288 -ppn 72  ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
+/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun -np 288 -ppn 72  ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
