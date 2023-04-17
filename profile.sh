@@ -14,7 +14,7 @@ export I_MPI_STATS=all
 cd testsuite
 
 POT3D_HOME=$PWD/..
-TEST="small"
+TEST="isc2023"
 
 cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
