@@ -6,9 +6,9 @@
 #SBATCH --output=%j.out              
 #SBATCH --error=%j.err   
 
-module load intelmpi-2021.7.0
-module load hdf5/1.10.7-impi-intel
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib/ libhdf5_fortran.so.200 
+#module load intelmpi-2021.7.0
+#module load hdf5/1.10.7-impi-intel
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib/libhdf5_fortran.so.200 
 cd testsuite
 
 POT3D_HOME=$PWD/..
