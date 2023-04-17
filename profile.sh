@@ -5,16 +5,18 @@
 #SBATCH --time=01:00:00
 #SBATCH --output=%j.out              
 #SBATCH --error=%j.err   
-   
+
+source /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/apsvars.sh
+#module load intel/2021.7.0
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib
 
-export IPM_DIR=/apps/hpcx/2.13.1-gcc-inbox/ompi/tests/ipm-2.0.6
-export IPM_KEYFILE=$IPM_DIR/etc/ipm_key_mpi
-export IPM_REPORT=full
-export IPM_LOG=full
-export IPM_STATS=all
-export IPM_LOGWRITER=serial
-export LD_PRELOAD=$IPM_DIR/lib/libipm.so
+#export IPM_DIR=/apps/hpcx/2.13.1-gcc-inbox/ompi/tests/ipm-2.0.6
+#export IPM_KEYFILE=$IPM_DIR/etc/ipm_key_mpi
+#export IPM_REPORT=full
+#export IPM_LOG=full
+#export IPM_STATS=all
+#export IPM_LOGWRITER=serial
+#export LD_PRELOAD=$IPM_DIR/lib/libipm.so
 cd testsuite
 
 POT3D_HOME=$PWD/..
@@ -24,7 +26,7 @@ cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
-mpirun -np 288 -ppn 72 -x LD_PRELOAD=$IPM_DIR/lib/libipm.so ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
+mpirun -np 288 -ppn 72 aps ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
