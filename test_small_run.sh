@@ -12,13 +12,13 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-
 cd testsuite
 
 POT3D_HOME=$PWD/..
-TEST="isc2023"
+TEST="small"
 
 cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
-mpirun -np  144 -ppn 36 $NP ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
+/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun -np  144 -ppn 36 $NP ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
