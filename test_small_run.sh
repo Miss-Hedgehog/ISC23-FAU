@@ -1,4 +1,10 @@
-NP=4
+#!/bin/bash   
+#SBATCH --job-name=pot3d           
+#SBATCH --nodes=4           
+#SBATCH --partition=work* 
+#SBATCH --time=01:00:00
+#SBATCH --output=%j.out              
+#SBATCH --error=%j.err   
 
 cd testsuite
 
@@ -9,7 +15,7 @@ cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
-mpirun -np $NP ${POT3D_HOME}/bin/pot3d > pot3d.log
+mpirun -np  288 -ppn 72 $NP ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
