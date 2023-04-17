@@ -1,5 +1,5 @@
 #!/bin/bash   
-#SBATCH --job-name=pot3d           
+#SBATCH --job-name=profile         
 #SBATCH --nodes=4           
 #SBATCH --partition=work
 #SBATCH --time=01:00:00
