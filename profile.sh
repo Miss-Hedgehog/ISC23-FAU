@@ -24,7 +24,7 @@ cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
-mpirun -x LD_PRELOAD -np 288 -ppn 72  $NP ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
+mpirun -np 288 -ppn 72 -x LD_PRELOAD=$IPM_DIR/lib/libipm.so ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
