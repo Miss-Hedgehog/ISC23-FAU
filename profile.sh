@@ -6,14 +6,18 @@
 #SBATCH --output=%j.out              
 #SBATCH --error=%j.err   
 
-source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/vtune-vars.sh
-source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/apsvars.sh 
+#source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/vtune-vars.sh
+#source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/apsvars.sh 
 #module load intel/2021.7.0
 #module load intelmpi-2021.7.0
 #module load hdf5/1.10.7-impi-intel
-
+export IPM_DIR=/apps/hpcx/2.13.1-gcc-inbox/ompi/tests/ipm-2.0.6
+export IPM_KEYFILE=$IPM_DIR/etc/ipm_key_mpi
+export IPM_LOG=full
+export IPM_REPORT=full
+export IPM_STATS=all
+export LD_PRELOAD=$IPM_DIR/lib/libipm.so "
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib
-
 export I_MPI_STATS=ipm
 cd testsuite
 
