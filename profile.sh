@@ -6,7 +6,8 @@
 #SBATCH --output=%j.out              
 #SBATCH --error=%j.err   
 
-#source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/vtune-vars.sh
+source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/vtune-vars.sh
+source  /home/hpc/b154dc/b154dc19/intel/oneapi/vtune/latest/apsvars.sh 
 #module load intel/2021.7.0
 #module load intelmpi-2021.7.0
 #module load hdf5/1.10.7-impi-intel
