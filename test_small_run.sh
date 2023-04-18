@@ -12,7 +12,7 @@
 export I_MPI_PIN=on
 export I_MPI_PIN_RESPECT_CPUSET=on
 export I_MPI_PIN_RESPECT_HCA=on
-export I_MPI_PIN_CELL=unit
+export I_MPI_PIN_CELL=core
 export I_MPI_PIN_DOMAIN=auto:compact
 export I_MPI_PIN_ORDER=bunch
 
