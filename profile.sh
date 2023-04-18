@@ -12,6 +12,12 @@
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib
 export I_MPI_STATS=1-20
 export I_MPI_STATS_SCOPE=all
+export I_MPI_PIN=on
+export I_MPI_PIN_RESPECT_CPUSET=on
+export I_MPI_PIN_RESPECT_HCA=on
+export I_MPI_PIN_CELL=core
+export I_MPI_PIN_DOMAIN=auto:compact
+export I_MPI_PIN_ORDER=bunch
 cd testsuite
 
 POT3D_HOME=$PWD/..
