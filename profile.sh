@@ -16,7 +16,7 @@ export IPM_KEYFILE=$IPM_DIR/etc/ipm_key_mpi
 export IPM_LOG=full
 export IPM_REPORT=full
 export IPM_STATS=all
-export LD_PRELOAD=$IPM_DIR/lib/libipm.so "
+export LD_PRELOAD=$IPM_DIR/lib/libipm.so
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib
 export I_MPI_STATS=ipm
 cd testsuite
