@@ -17,7 +17,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-
 cd testsuite
 
 POT3D_HOME=$PWD/..
-TEST="isc2023"
+TEST="small"
 
 cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
