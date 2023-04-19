@@ -23,10 +23,10 @@ export I_MPI_ADJUST_ALLREDUCE=2
 export I_MPI_ADJUST_BCAST=1
 export I_MPI_DAPL_SCALABLE_PROGRESS=1
 export I_MPI_DAPL_UD=enable
-
+export I_MPI_WAIT_MODE=enable
 export I_MPI_PERHOST=allcores
 
-export I_MPI_PIN_PROCESSOR_LIST=‘grain=cache2,shift=sock’
+#export I_MPI_PIN_PROCESSOR_LIST=‘grain=cache2,shift=sock’
 
 
 
