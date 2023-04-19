@@ -16,6 +16,20 @@ export I_MPI_PIN_CELL=core
 export I_MPI_PIN_DOMAIN=auto:compact
 export I_MPI_PIN_ORDER=bunch
 
+export I_MPI_FABRICS=shm:dapl 
+
+export I_MPI_ADJUST_REDUCE=2 
+export I_MPI_ADJUST_ALLREDUCE=2
+export I_MPI_ADJUST_BCAST=1
+export I_MPI_DAPL_SCALABLE_PROGRESS=1
+export I_MPI_DAPL_UD=enable
+
+export I_MPI_PERHOST=allcores
+
+export I_MPI_PIN_PROCESSOR_LIST=‘grain=cache2,shift=sock’
+
+
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/intel-2021.7.0/hdf5-1.12.2-l7wmsy76ansuprtkjfj6nsvfbd2owmkc/lib
 cd testsuite
 
