@@ -28,6 +28,7 @@ export I_MPI_PERHOST=allcores
 
 export I_MPI_THREAD_YIELD=3
 export I_MPI_THREAD_SLEEP=10
+export I_MPI_MULTIRAIL=1
 
 #export I_MPI_PIN_PROCESSOR_LIST=‘grain=cache2,shift=sock’
 
