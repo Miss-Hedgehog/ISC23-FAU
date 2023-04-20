@@ -9,10 +9,11 @@
 #module load intelmpi-2021.7.0
 #module load hdf5/1.10.7-impi-intel
 
+
+export I_MPI_OFA_NUM_ADAPTERS=2
+export I_MPI_OFA_NUM_PORTS=1
 export I_MPI_PIN=on
-export FI_PROVIDER=mlx
-export I_MPI_PIN_DOMAIN=numa
-export I_MPI_FABRICS=shm:dapl 
+#export I_MPI_FALLBACK=0
 
 
 
@@ -26,7 +27,7 @@ cp ${POT3D_HOME}/testsuite/${TEST}/input/* ${POT3D_HOME}/testsuite/${TEST}/run/
 cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
-/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun -np  288 -ppn  72 ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
+/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun  I_MPI_PIN_PROCESSOR_LIST map=scatter shift=socket -np  288 -ppn  72 ${POT3D_HOME}/bin/pot3d_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
