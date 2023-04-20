@@ -10,27 +10,9 @@
 #module load hdf5/1.10.7-impi-intel
 
 export I_MPI_PIN=on
-export I_MPI_PIN_RESPECT_CPUSET=on
-export I_MPI_PIN_RESPECT_HCA=on
-export I_MPI_PIN_CELL=core
-export I_MPI_PIN_DOMAIN=auto:compact
-export I_MPI_PIN_ORDER=bunch
-
+export FI_PROVIDER=mlx
+export I_MPI_PIN_DOMAIN=numa
 export I_MPI_FABRICS=shm:dapl 
-
-export I_MPI_ADJUST_REDUCE=2 
-export I_MPI_ADJUST_ALLREDUCE=2
-export I_MPI_ADJUST_BCAST=1
-export I_MPI_DAPL_SCALABLE_PROGRESS=1
-export I_MPI_DAPL_UD=enable
-#export I_MPI_WAIT_MODE=enable
-export I_MPI_PERHOST=allcores
-
-export I_MPI_THREAD_YIELD=3
-export I_MPI_THREAD_SLEEP=10
-export I_MPI_MULTIRAIL=1
-
-#export I_MPI_PIN_PROCESSOR_LIST=‘grain=cache2,shift=sock’
 
 
 
