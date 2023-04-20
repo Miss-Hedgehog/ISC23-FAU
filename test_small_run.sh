@@ -15,7 +15,6 @@ export I_MPI_OFA_NUM_PORTS=1
 export I_MPI_PIN=on
 export I_MPI_PIN_DOMAIN=compact
 export I_MPI_PIN_ORDER=compact
-#export I_MPI_FALLBACK=0
 
 
 
