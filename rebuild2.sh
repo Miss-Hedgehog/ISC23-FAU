@@ -25,7 +25,7 @@ HDF5_LIB_FLAGS="-lhdf5_fortran -lhdf5_hl_fortran -lhdf5 -lhdf5_hl"
 # Please set the compile flags based on your compiler and hardware setup.
 ###########################################################################
 
-FFLAGS="-O3 "
+FFLAGS="-O2 -stdpar-multicore -mp"
 
 ###########################################################################
 # If using NV HPC SDK for GPUs, with CUDA version >= 11.3, you can set 
@@ -36,7 +36,7 @@ FFLAGS="-O3 "
 ###########################################################################
 
 POT3D_CUSPARSE=0
-CCFLAGS="-O2 -stdpar-multicore -mp"
+CCFLAGS="-O3"
 
 ###########################################################################
 ###########################################################################
