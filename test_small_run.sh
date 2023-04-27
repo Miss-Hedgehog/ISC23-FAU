@@ -21,7 +21,7 @@ cd ${POT3D_HOME}/testsuite/${TEST}/run
 
 echo "Running POT3D with $NP MPI rank..."
 #/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun   -np  288  -ppn 72  ${POT3D_HOME}/bin/pot3d2_impi > pot3d.log
-/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun -np 288 --map-by ppr:18:numa:pe=1   ${POT3D_HOME}/bin/pot3d2_impi > pot3d.log
+/apps/SPACK/0.19.0/opt/linux-almalinux8-icelake/gcc-8.5.0/intel-oneapi-mpi-2021.7.1-f7feyqf46fk4dwyew7km6nsiitbcb2aa/mpi/2021.7.1/bin/mpirun -np 272 --map-by ppr:17:numa:pe=1   ${POT3D_HOME}/bin/pot3d2_impi > pot3d.log
 echo "Done!"
 
 # Get runtime:
